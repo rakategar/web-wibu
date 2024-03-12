@@ -2,15 +2,20 @@ import { getAnimeResponse } from "@/libs/api-libs"
 import VideoPlayer from "@/components/Utilities/VideoPlayer"
 import Image from "next/image"
 import YouTube from "react-youtube"
+import CollectionButton from "@/components/AnimeList/CollectionButton"
+import { authUserSession } from "@/libs/auth-libs"
 const Page = async({params : {id}}) => {
+
     const detailAnime = await getAnimeResponse (`anime/${id}`)
-    console.log(detailAnime)
+    const user = await authUserSession()
+
     return (
         <>
             <div className="pt-4 px-4  ">
                 <h3 className="text-2xl font-bold text-palete-primary">
                 {detailAnime.data.title}  {detailAnime.data.year}
                 </h3>
+                <CollectionButton anime_mal_id={id} user_email={user?.email}/>
             </div>
             <div className="pt-4 px-4 text-2xl font-bold text-palete-primary flex gap-4 overflow-x-auto">
                 <div className="w-36 p-2 flex justify-center items-center rounded flex-col border border-palete-accent ">

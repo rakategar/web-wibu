@@ -1,8 +1,11 @@
 "use client";
 import { MagnifyingGlass } from "@phosphor-icons/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
+  const router = useRouter()
+
   return (
     <div className="min-h-screen max-w-xl mx-auto flex justify-center items-center flex-col gap-6">
       <div className="flex justify-center items-center gap-4 ">
@@ -11,14 +14,14 @@ const Page = () => {
           Anime Tidak Ditemukan
         </h3>
       </div>
-      <Link
-        href="/"
+      <button
+        onClick={() => router.back()}
         className="border border-palete-primary px-4 py-2 rounded-md
         hover:border-palete-accent text-xl font-bold text-palete-primary
         hover:text-palete-accent transition-all"
       >
         Kembali
-      </Link>
+      </button>
     </div>
   );
 };
