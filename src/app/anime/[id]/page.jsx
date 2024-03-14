@@ -5,6 +5,8 @@ import YouTube from "react-youtube"
 import CollectionButton from "@/components/AnimeList/CollectionButton"
 import { authUserSession } from "@/libs/auth-libs"
 import prisma from "@/libs/prisma"
+import CommentInput from "@/components/AnimeList/CommentInput"
+import CommentBox from "@/components/AnimeList/CommentBox"
 const Page = async({params : {id}}) => {
 
     const detailAnime = await getAnimeResponse (`anime/${id}`)
@@ -50,6 +52,12 @@ const Page = async({params : {id}}) => {
                     className=" rounded object-cover">
                 </Image>
                 <p className="text-justify text-xl text-palete-primary"> {detailAnime.data.synopsis}</p>
+            </div>
+            <div className="p-4">
+                <h3 className="text-2xl text-palete-primary mb-2 text-bold">Komentar Penonton</h3>
+                <CommentBox anime_mal_id={id}/>
+                {user && <CommentInput anime_mal_id={id} user_email={user.email} user_name={user.name} anime_title={detailAnime.data.title}/>}
+                
             </div>
             <div>
                 <VideoPlayer youtubeId={detailAnime.data.trailer.youtube_id}>

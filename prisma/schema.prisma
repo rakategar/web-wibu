@@ -24,7 +24,8 @@ model Collection {
 }
 model Comment {
   id              Int @id @default(autoincrement())
-  anime_mal_id    String 
+  anime_mal_id    String
+  anime_title     String 
   user_email      String
   user_name       String
   comment         String
