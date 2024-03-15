@@ -49,7 +49,7 @@ const Page = async({params : {id}}) => {
                     alt={detailAnime.data.images.jpg.image_url}
                     width={250}
                     height={250}
-                    className=" rounded object-cover">
+                    className=" rounded object-cover justify-flex justify-center items-center">
                 </Image>
                 <p className="text-justify text-xl text-palete-primary"> {detailAnime.data.synopsis}</p>
             </div>

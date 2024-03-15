@@ -15,7 +15,8 @@ const VideoPlayer = ({youtubeId})=> {
             <button className="text-palete-primary float-right bg-palete-secondary p-3 text-3xl mb-2 hover:text-palete-accent" onClick={handleVideoPlayer}>
             X
             </button>
-            <YouTube videoId={youtubeId} onReady={(event) => event.target.playVideo} opts={{ height: "250", width: "350" }}></YouTube>
+            <YouTube videoId={youtubeId} onReady={(event) => event.target.playVideo()} 
+            opts={{ height: "250", width: "350", autoPlay: 1}}></YouTube>
         </div>
         )
     }

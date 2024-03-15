@@ -2,6 +2,8 @@ import { authUserSession } from "@/libs/auth-libs"
 import prisma from "@/libs/prisma"
 import Link from "next/link"
 import Header from "@/components/Dashboard/Header";
+import RefreshPage from "../refreshPage/RefreshPage";
+import NotFound from "../not-found/NotFound";
 
 const Page = async() => {
     const user = await authUserSession()
@@ -10,8 +12,11 @@ const Page = async() => {
     return (
         <section className="p-4">
             <Header title={"My Comment"}/>
+            {comments.length === 0 ? (
+            <NotFound judulHalaman={"Kamu belum pernah komentar nihh :("}/>
+        ) : (
             <div className="grid grid-cols-1 gap-4 mb-4 ">
-
+                <RefreshPage/>
                 {comments.map(comment => {
                     return (
 
@@ -23,6 +28,7 @@ const Page = async() => {
                     )
                 })}
             </div>
+        )}
         </section>
         
     )
