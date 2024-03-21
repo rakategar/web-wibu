@@ -22,6 +22,7 @@ model Collection {
 
   @@unique([user_email, anime_mal_id])
 }
+
 model Comment {
   id              Int @id @default(autoincrement())
   anime_mal_id    String
@@ -29,6 +30,9 @@ model Comment {
   user_email      String
   user_name       String
   comment         String
+}
 
-
+model vip {
+  user_name       String @id
+  status          Boolean
 }

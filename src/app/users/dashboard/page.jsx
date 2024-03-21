@@ -9,12 +9,18 @@ const Page = async() => {
             <Image src={user?.image} alt="..." width={250} height={250}></Image>
             <div className="py-8 flex gap-4 flex-warp justify-center items-center">
                 <Link href="/users/dashboard/collection" 
-                className="bg-palete-accent text-palete-dark font-bold px-4 py-2 text-xl"
+                className="bg-palete-accent text-palete-dark font-bold px-4 py-2 text-xl rounded "
                 >My Colection</Link>
 
                 <Link href="/users/dashboard/comment" 
-                className="bg-palete-accent text-palete-dark font-bold px-4 py-2 text-xl"
+                className="bg-palete-accent text-palete-dark font-bold px-4 py-2 text-xl rounded"
                 >My Comment</Link>
+            </div>
+            <div>
+                <Link href="/users/dashboard/vip" 
+                className="bg-palete-accent text-palete-dark font-bold px-4 py-2 text-xl rounded"
+                >Berlangganan VIP ?</Link>
+                
             </div>
 
         </div>
