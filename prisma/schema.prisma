@@ -34,5 +34,5 @@ model Comment {
 
 model vip {
   user_name       String @id
-  status          Boolean
+  status          String
 }

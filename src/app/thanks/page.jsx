@@ -13,9 +13,9 @@ const Page = () => {
                 <div className="text-xl font-bold py-4">- Fitur Komentar</div>
             </div>
             
-            <Link href="http://localhost:3000" 
+            <Link href="http://localhost:3000/users/dashboard/claimvip" 
                 className="bg-palete-accent text-palete-dark font-bold px-4 py-2 text-xl rounded"
-                >Back</Link>
+                >Claim VIP</Link>
 
         </div>
     )
