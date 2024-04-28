@@ -1,4 +1,5 @@
 import { authUserSession } from "@/libs/auth-libs"
+import prisma from "@/libs/prisma"
 import Image from "next/image"
 import Link from "next/link"
 const Page = async() => {

@@ -1,6 +1,6 @@
 
 import { data } from "autoprefixer";
-import AnimeList from "/home/raka/webwibu/src/components/AnimeList/index.jsx";
+import AnimeList from "@/components/AnimeList";
 import Link from "next/link";
 import Header from "@/components/AnimeList/Header";
 import { getAnimeResponse } from "@/libs/api-libs";

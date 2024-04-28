@@ -14,7 +14,7 @@ const Page = async({params : {id}}) => {
     const collection = await prisma.collection.findFirst({
         where: { user_email: user?.email, anime_mal_id: id }
     })
-    const vip = await prisma.vip.findFirst({where : {user_name : user.name}})
+    const vip = await prisma.vip.findFirst({where : {user_name : user?.name}})
     const showCommentBox = !!vip?.user_name; // Jika vip.user_name ditemukan, nilai akan menjadi true
 
     return (
