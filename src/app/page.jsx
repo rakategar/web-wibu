@@ -1,16 +1,26 @@
-import React from "react"
-import { data } from "autoprefixer";
+"use client"
+
+import React, { useEffect, useState } from "react";
 import AnimeList from "../components/AnimeList";
 import Link from "next/link";
 import Header from "@/components/AnimeList/Header";
 import { getAnimeResponse, getNestedAnimeResponse, reproduce } from "@/libs/api-libs";
 
-const Page = async () => {
-  
-  const topAnime = await getAnimeResponse("top/anime", "page=8")
-  let recommendedAnime = await getNestedAnimeResponse("recommendations/anime", "entry")
-  recommendedAnime = reproduce(recommendedAnime, 4)
-  
+const Page = () => {
+  const [topAnime, setTopAnime] = useState(null);
+  const [recommendedAnime, setRecommendedAnime] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const topAnimeData = await getAnimeResponse("top/anime", "page=8");
+      const recommendedAnimeData = await getNestedAnimeResponse("recommendations/anime", "entry");
+      setTopAnime(topAnimeData);
+      setRecommendedAnime(reproduce(recommendedAnimeData, 4));
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <>
       {/* Anime Populer */}
@@ -21,7 +31,7 @@ const Page = async () => {
           linkHref="/populer"
         />
       </section>
-      <AnimeList api={topAnime} />
+      {topAnime && <AnimeList api={topAnime} />}
 
       {/* Rekomendasi*/}
       <section>
@@ -30,7 +40,7 @@ const Page = async () => {
           linkHref="/new"
         />
       </section>
-      <AnimeList api={recommendedAnime} />
+      {recommendedAnime && <AnimeList api={recommendedAnime} />}
     </>
   );
 };

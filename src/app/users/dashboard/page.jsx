@@ -23,9 +23,11 @@ const Page = async() => {
                 }
             </div>
             <div>
-                <Link href="/users/dashboard/vip" 
+                {vip?  <div/>
+                : <Link href="/users/dashboard/vip" 
                 className="bg-palete-accent text-palete-dark font-bold px-4 py-2 text-xl rounded"
-                >Berlangganan VIP ?</Link>
+                >Berlangganan VIP ?</Link>}
+                
                 
             </div>
 

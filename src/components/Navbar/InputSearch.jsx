@@ -20,7 +20,7 @@ const InputSearch = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative pl-28">
       <input
         placeholder="Cari Anime ... "
         className="p-2 rounded w-full"
