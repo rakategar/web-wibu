@@ -1,3 +1,32 @@
+<div align="center">
+  <img src="/readme/poster.png" width="550"/>
+</div>
+
+
+
+### Short Description:
+WebWibu, merupakan aplikasi website yang terintegrasi oleh Database JikanApi dan Payment Gateway MidTrans, aplikasi ini bertujuan untuk menyajikan daftar anime baik secara rekomendasi, tingkat popularitas, serta ranking. Aplikasi ini disertai mini Youtube Player yang memudahkan pengguna
+### Description:
+
+
+
+We also tried to make the design as convenient and beautiful as possible.
+
+### Screenshots:
+
+
+This application was created to fulfill the final project of the Mobile Programming Course by Group 4 ( Tim Gacor ) [Program Studi S1 Pendidikan Teknologi Informasi 2022](https://pendidikan-ti.ft.unesa.ac.id) [Fakultas Teknik](https://ft.unesa.ac.id) [Universitas Negeri Surabaya](https://www.unesa.ac.id/) With our team :
+
+1. Raka Tegar Wicaksono (22050974019)
+2. Solikhul Mauludin (22050974014)
+3. Muhammad Hamdan Fuadi (22050974034)
+4. Rino Raihan Gumilang (22050974025)
+
+Special Thanks to
+Allah SWT.
+and all teams who contributed.
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
